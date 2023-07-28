@@ -129,4 +129,4 @@ which direnv > /dev/null && eval "$(direnv hook zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias dotgit='git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias dotgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
