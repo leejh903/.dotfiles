@@ -11,7 +11,7 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jk", "<ESC>")
 
 -- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+keymap.set("n", "<leader>h", ":nohl<CR>")
 
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
@@ -31,8 +31,10 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<S-l>", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<S-h>", ":tabp<CR>") --  go to previous tab
 
+-- save, kill
 keymap.set("n", "<leader>w", ":w<CR>")
 keymap.set("n", "<leader>x", ":xa<CR>")
+keymap.set("n", "<leader>bd", ":bd<CR>")
 
 ----------------------
 -- Plugin Keybinds
