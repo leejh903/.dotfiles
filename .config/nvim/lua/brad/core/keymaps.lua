@@ -11,7 +11,7 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("i", "jk", "<ESC>")
 
 -- clear search highlights
-keymap.set("n", "<leader>h", ":nohl<CR>")
+keymap.set("n", "<leader>h", ":nohl<cr>")
 
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
@@ -24,27 +24,27 @@ keymap.set("n", "<leader>-", "<C-x>") -- decrement
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+keymap.set("n", "<leader>sx", ":close<cr>") -- close current split window
 
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<S-l>", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<S-h>", ":tabp<CR>") --  go to previous tab
+keymap.set("n", "<leader>to", ":tabnew<cr>") -- open new tab
+keymap.set("n", "<leader>tx", ":tabclose<cr>") -- close current tab
+keymap.set("n", "<S-l>", ":tabn<cr>") --  go to next tab
+keymap.set("n", "<S-h>", ":tabp<cr>") --  go to previous tab
 
 -- save, kill
-keymap.set("n", "<leader>w", ":w<CR>")
-keymap.set("n", "<leader>x", ":xa<CR>")
-keymap.set("n", "<leader>bd", ":bd<CR>")
+keymap.set("n", "<leader>w", ":w<cr>")
+keymap.set("n", "<leader>x", ":xa<cr>")
+keymap.set("n", "<leader>bd", ":bd<cr>")
 
 ----------------------
 -- Plugin Keybinds
 ----------------------
 
 -- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
+keymap.set("n", "<leader>sm", ":MaximizerToggle<cr>") -- toggle split window maximization
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
