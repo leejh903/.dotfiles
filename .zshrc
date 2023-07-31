@@ -130,6 +130,7 @@ which direnv > /dev/null && eval "$(direnv hook zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias dotgit='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotlazy='lazygit --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Android 
 export ANDROID_HOME=$HOME/Library/Android/sdk
