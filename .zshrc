@@ -139,3 +139,5 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 [[ -d ~/.rbenv  ]] && \
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
+
+alias ide='tmux split-window -v -p 30; tmux split-window -h -p 66; tmux split-window -h -p 50'
