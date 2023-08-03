@@ -56,13 +56,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- configure html server
-lspconfig["html"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
--- configure typescript server with plugin
 typescript.setup({
   server = {
     capabilities = capabilities,
@@ -70,34 +63,18 @@ typescript.setup({
   },
 })
 
--- configure css server
-lspconfig["cssls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
+-- setup default servers
+local defaultSever =
+  { "lua_ls", "html", "cssls", "tailwindcss", "emmet_ls", "gopls", "kotlin_language_server", "pyright" }
+for _, name in ipairs(defaultSever) do
+  lspconfig[name].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+  })
+end
 
--- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
--- configure emmet language server
-lspconfig["emmet_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = { "html", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-})
-
-lspconfig["gopls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
--- configure lua server (with special settings)
+-- configure special settings
 lspconfig["lua_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
   settings = { -- custom settings for lua
     Lua = {
       -- make the language server recognize "vim" global
