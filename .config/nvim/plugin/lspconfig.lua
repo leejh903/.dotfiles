@@ -35,7 +35,6 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
   keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
-  -- keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
   keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
 
   -- typescript specific keymaps (e.g. rename file and update imports)
@@ -68,27 +67,15 @@ typescript.setup({
 local defaultSever =
   { "lua_ls", "html", "cssls", "tailwindcss", "emmet_ls", "gopls", "kotlin_language_server", "pyright" }
 for _, name in ipairs(defaultSever) do
-  lspconfig[name].setup({
+  local default = {
     capabilities = capabilities,
     on_attach = on_attach,
-  })
-end
+  }
 
--- configure special settings
-lspconfig["lua_ls"].setup({
-  settings = { -- custom settings for lua
-    Lua = {
-      -- make the language server recognize "vim" global
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        -- make language server aware of runtime files
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-        },
-      },
-    },
-  },
-})
+  local has_custom_provider, custom_config = pcall(require, "plugin/providers/" .. name)
+  if has_custom_provider then
+    default = vim.tbl_deep_extend("force", default, custom_config)
+  end
+
+  lspconfig[name].setup(default)
+end
