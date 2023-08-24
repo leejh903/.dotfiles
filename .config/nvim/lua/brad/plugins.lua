@@ -112,6 +112,9 @@ return packer.startup(function(use)
   -- todo comments
   use({ "folke/todo-comments.nvim", requires = { "nvim-lua/plenary.nvim" } })
 
+  -- bookmark
+  use({ "tomasky/bookmarks.nvim" })
+
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
   use({

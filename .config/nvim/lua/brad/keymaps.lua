@@ -52,5 +52,6 @@ keymap.set("n", "<leader>ft", "<cmd>Telescope live_grep<cr>") -- find string in 
 keymap.set("n", "<leader>bf", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>sh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 keymap.set("n", "<leader>tf", "<cmd>TodoTelescope<cr>") -- find todo comments
+keymap.set("n", "<leader>mf", "<cmd>Telescope bookmarks list<cr>") -- find bookmarks
 -- git
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
