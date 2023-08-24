@@ -145,3 +145,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # for tmux ide view
 alias ide='tmux split-window -v -p 30; tmux split-window -h -p 66; tmux split-window -h -p 50'
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"

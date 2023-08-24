@@ -64,8 +64,17 @@ typescript.setup({
 })
 
 -- setup default servers
-local defaultSever =
-  { "lua_ls", "html", "cssls", "tailwindcss", "emmet_ls", "gopls", "kotlin_language_server", "pyright" }
+local defaultSever = {
+  "lua_ls",
+  "html",
+  "cssls",
+  "tailwindcss",
+  "emmet_ls",
+  "gopls",
+  "kotlin_language_server",
+  "pyright",
+  "rust_analyzer",
+}
 for _, name in ipairs(defaultSever) do
   local default = {
     capabilities = capabilities,
