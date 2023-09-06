@@ -75,7 +75,6 @@ local defaultSever = {
   "kotlin_language_server",
   "pyright",
   "rust_analyzer",
-  "jdtls",
   "dartls",
 }
 for _, name in ipairs(defaultSever) do
