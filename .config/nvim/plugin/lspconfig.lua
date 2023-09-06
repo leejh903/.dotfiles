@@ -76,6 +76,7 @@ local defaultSever = {
   "pyright",
   "rust_analyzer",
   "jdtls",
+  "dartls",
 }
 for _, name in ipairs(defaultSever) do
   local default = {
