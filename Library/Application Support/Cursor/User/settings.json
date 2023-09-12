@@ -1,32 +1,52 @@
 {
-        "editor.mouseWheelZoom": true,
-        "git.autofetch": true,
-        "editor.wordWrap": "on",
-        "[typescript]": {
-            "editor.defaultFormatter": "esbenp.prettier-vscode"
-        },
-        "editor.tabSize": 2,
-        "editor.codeActionsOnSave": {
-            "source.fixAll.eslint": true,
-            "source.fixAll.tslint": true,
-            "source.addMissingImports": true
-        },
-        "editor.formatOnSave": true,
-        "editor.accessibilitySupport": "off",
-        "terminal.external.osxExec": "iTerm.app",
-        "terminal.explorerKind": "external",
-        "terminal.integrated.defaultProfile.osx": "zsh",
-        "terminal.integrated.fontFamily": "MesloLGS NF",
-        "window.autoDetectColorScheme": true,
-        "window.commandCenter": false,
-        "workbench.preferredLightColorTheme": "Night Owl",
-        "workbench.colorTheme": "Night Owl",
-        "go.toolsManagement.autoUpdate": true,
-        "workbench.preferredDarkColorTheme": "Night Owl",
-        "workbench.layoutControl.enabled": false,
-        "workbench.iconTheme": "material-icon-theme",
-        "terminal.integrated.fontSize": 13,
-        "window.titleBarStyle": "custom",
-        "vscode_vibrancy.opacity": 0.0,
-        "terminal.integrated.gpuAcceleration": "off"
+  // editor
+  "editor.mouseWheelZoom": true,
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.addMissingImports": true
+  },
+  "editor.formatOnSave": true,
+  "editor.accessibilitySupport": "off",
+  "editor.fontSize": 12,
+
+  // terminal
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.explorerKind": "external",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.gpuAcceleration": "off",
+
+  // window
+  "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
+  "window.titleBarStyle": "custom",
+
+  // theme
+  "workbench.preferredLightColorTheme": "Night Owl (No Italics)",
+  "workbench.colorTheme": "Night Owl (No Italics)",
+  "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
+  "workbench.layoutControl.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "vscode_vibrancy.opacity": 0.0,
+
+  // vim
+  "vim.normalModeKeyBindings": [
+    { "before": ["g", "r"], "commands": ["references-view.findReferences"] },
+    { "before": ["r", "n"], "commands": ["editor.action.rename"] }
+  ],
+
+  // git
+  "git.autofetch": true,
+
+  // format
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
