@@ -34,6 +34,10 @@
   "vscode_vibrancy.opacity": 0.0,
 
   // vim
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/opt/homebrew/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/opt/homebrew/bin/im-select {im}",
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
   "vim.normalModeKeyBindings": [
     { "before": ["g", "r"], "commands": ["references-view.findReferences"] },
     { "before": ["r", "n"], "commands": ["editor.action.rename"] }
@@ -47,6 +51,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
