@@ -1,0 +1,32 @@
+{
+        "editor.mouseWheelZoom": true,
+        "git.autofetch": true,
+        "editor.wordWrap": "on",
+        "[typescript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "editor.tabSize": 2,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true,
+            "source.fixAll.tslint": true,
+            "source.addMissingImports": true
+        },
+        "editor.formatOnSave": true,
+        "editor.accessibilitySupport": "off",
+        "terminal.external.osxExec": "iTerm.app",
+        "terminal.explorerKind": "external",
+        "terminal.integrated.defaultProfile.osx": "zsh",
+        "terminal.integrated.fontFamily": "MesloLGS NF",
+        "window.autoDetectColorScheme": true,
+        "window.commandCenter": false,
+        "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
+        "workbench.colorTheme": "Night Owl",
+        "go.toolsManagement.autoUpdate": true,
+        "workbench.preferredDarkColorTheme": "Night Owl (No Italics)",
+        "workbench.layoutControl.enabled": false,
+        "workbench.iconTheme": "material-icon-theme",
+        "terminal.integrated.fontSize": 13,
+        "window.titleBarStyle": "custom",
+        "vscode_vibrancy.opacity": 0.0,
+        "terminal.integrated.gpuAcceleration": "off"
+}
