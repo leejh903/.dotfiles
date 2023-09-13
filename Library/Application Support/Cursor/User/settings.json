@@ -56,5 +56,34 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+
+  // todo-tree
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "foreground": "black",
+      "background": "skyblue",
+      "iconColour": "skyblue",
+      "icon": "check"
+    },
+    "FIXME": {
+      "foreground": "black",
+      "background": "red",
+      "iconColour": "red",
+      "icon": "bug"
+    },
+    "NOTE": {
+      "foreground": "black",
+      "background": "yellow",
+      "iconColour": "yellow",
+      "icon": "eye"
+    },
+    "WARN": {
+      "foreground": "black",
+      "background": "orange",
+      "iconColour": "orange",
+      "icon": "alert"
+    }
+  },
+  "todo-tree.general.tags": ["TODO", "FIXME", "NOTE", "WARN"]
 }
