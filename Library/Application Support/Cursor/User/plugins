@@ -4,5 +4,7 @@ cursor --install-extension golang.go
 cursor --install-extension illixion.vscode-vibrancy-continued
 cursor --install-extension lehni.vscode-fix-checksums
 cursor --install-extension mhutchie.git-graph
+cursor --install-extension ms-vscode.vscode-typescript-next
 cursor --install-extension PKief.material-icon-theme
 cursor --install-extension vscodevim.vim
+cursor --install-extension wayou.vscode-todo-highlight

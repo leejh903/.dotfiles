@@ -11,6 +11,7 @@
   "editor.formatOnSave": true,
   "editor.accessibilitySupport": "off",
   "editor.fontSize": 12,
+  "http.proxyStrictSSL": false,
 
   // terminal
   "terminal.external.osxExec": "iTerm.app",
