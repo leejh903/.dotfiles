@@ -138,11 +138,6 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# ruby env
-[[ -d ~/.rbenv  ]] && \
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
-  eval "$(rbenv init -)"
-
 # for tmux ide view
 alias ide='tmux split-window -v -p 30; tmux split-window -h -p 66; tmux split-window -h -p 50'
 
@@ -157,3 +152,5 @@ fi
 # flutter
 export PATH="$PATH:$HOME/flutter/bin"
 
+# asdf ruby
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
