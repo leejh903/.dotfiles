@@ -33,6 +33,7 @@ yabai -m rule --add app="^Toggl Track$" manage=off
 yabai -m rule --add app="^Clockify Desktop$" manage=off
 yabai -m rule --add app="^DeepL$" manage=off
 yabai -m rule --add app="^Todoist$" manage=off
+yabai -m rule --add app="^Rise$" manage=off
 
 # window border
 
