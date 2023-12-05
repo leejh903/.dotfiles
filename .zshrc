@@ -154,3 +154,7 @@ export PATH="$PATH:$HOME/flutter/bin"
 
 # asdf ruby
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# mysql
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+
