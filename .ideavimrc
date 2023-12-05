@@ -5,9 +5,32 @@ set history=1000
 " status bar
 set showmode
 
+" find and replace
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
+map <leader>nh :noh<CR>
+
+" ideavim settings
+set ideajoin
+set ideamarks
+set idearefactormode=normal
+set ideastatusicon=gray
+
 " leader
 map <space> <nop>
 let mapleader="\<space>"
+
+" better HJKL
+map H ^
+map L $
+map J }
+map K {
+
+" better escape
+inoremap jk <Esc>
 
 " copy to system clipboard
 set clipboard+=unnamed
@@ -15,6 +38,12 @@ set clipboard+=unnamed
 " location
 map <C-i> <Action>(Back)
 map <C-o> <Action>(Forward)
+
+" editor
+map <leader>xx <Action>(CloseContent)
+map <leader>xa <Action>(CloseAllEditors)
+map <leader>xo <Action>(CloseAllEditorsButActive)
+map <leader>xp <Action>(CloseAllUnpinnedEditors)
 
 " tab
 map <C-Tab> <Action>(PreviousTab)
@@ -48,6 +77,7 @@ map <C-h> <C-w>h
 map <C-l> <C-w>l
 
 map <leader>ww <Action>(HideAllWindows)
+map <leader>wa <Action>(HideActiveWindow)
 nmap <leader>wk <Action>(StretchSplitToTop)
 nmap <leader>wj <Action>(StretchSplitToBottom)
 nmap <leader>wh <Action>(StretchSplitToLeft)
@@ -87,6 +117,66 @@ map <leader>qp <Action>(QuickPreview)
 map <leader>qd <Action>(QuickDefinition)
 map <leader>qD <Action>(QuickTypeDefinition)
 
+" code
+map <leader>c <Action>(CommentByLineComment)
+map <leader>C <Action>(CommentByBlockComment)
+map <leader>qf <Action>(ShowIntentionActions)
+map <leader>g <Action>(ShowErrorDescription)
+map <leader>om <Action>(OverrideMethods)
+map <leader>im <Action>(ImplementMethods)
+nmap \\o <Action>(SelectAllOccurrences)
+nmap \\g <Action>(Generate)
+nmap \\fc <Action>(ReformatCode)
+nmap \\ic <Action>(InspectCode)
+nmap \\t <Action>(GoToTest)
+
+" run
+map <leader>rc <Action>(ContextRun)
+map <leader>rx<Action>(chooseRunConfiguration)
+map <leader>rr <Action>(Rerun)
+map <leader>rt <Action>(RunTests)
+map <leader>rs <Action>(Stop)
+
+" debug
+map <leader>dc <Action>(ContextDebug)
+map <leader>dx <Action>(Debug)
+map <leader>db <Action>(ToggleLineBreakpoint)
+map <leader>de <Action>(EditBreakpoint)
+map <leader>dv <Action>(ViewBreakpoints)
+
+" build
+map <leader>bb <Action>(BuildMenu)
+
+" refactor
+map <leader>rn <Action>(RenameElement)
+map <leader>re <Action>(Refactorings.QuickListPopupAction)
+map <leader>uw <Action>(Unwrap)
+map <leader>sw <Action>(SurroundWith)
+map <leader>sd <Action>(SafeDelete)
+map <leader>oi <Action>(OptimizeImports)
+
+" hierarchy
+nmap <leader>hc <Action>(CallHierarchy)
+nmap <leader>hm <Action>(MethodHierarchy)
+nmap <leader>ht <Action>(TypeHierarchy)
+
+" collapse
+" map zz <Action>(ExpandCollapseToggleAction)
+map za <Action>(CollapseAllRegions)
+map zA <Action>(ExpandAllRegions)
+
+" []
+nmap [g <Action>(GotoPreviousError)
+nmap ]g <Action>(GotoNextError)
+nmap [u <Action>(GotoPrevElementUnderCaretUsage)
+nmap ]u <Action>(GotoNextElementUnderCaretUsage)
+nmap [o <Action>(PreviousOccurence)
+nmap ]o <Action>(NextOccurence)
+nmap [m <Action>(MethodUp)
+nmap ]m <Action>(MethodDown)
+nmap [c <Action>(JumpToLastChange)
+nmap ]c <Action>(JumpToNextChange)
+
 " goto
 map <leader>a <Action>(GotoAction)
 map ga <Action>(GotoAction)
@@ -113,5 +203,53 @@ nmap ms <Action>(ShowBookmarks)
 " todo
 map <leader>to <Action>(ActivateTODOToolWindow)
 
+" task
+map <leader>ts <Action>(tasks.goto)
+
+" idea join
+map \\jl <Action>(EditorJoinLines)
+
+" gist
+map \\cg <Action>(Github.Create.Gist)
+
+" vcs
+map <leader>v <Action>(VcsGroups)
+
+" open IdeaVim settings
+map \\v <Action>(VimActions)
+
+" text-object (bundle plugin)
+set vim-paragraph-motion
+set textobj-indent
+set textobj-entire
+set argtextobj
+
+" jump-motion (required idea plugin: IdeaVim-EasyMotion, AceJump)
+set easymotion
+
+" highlight yank (bundle plugin)
+set highlightedyank
+let g:highlightedyank_highlight_duration = "1000"
+let g:highlightedyank_highlight_color = "rgba(57, 197, 187, 155)"
+
+" code screenshot (required idea plugin: Code Screenshots)
+map \\cs <Action>(one.util.ideaplugin.screenshoter.CopyImageAction)
+
+" surround (bundle plugin)
+" usage: https://github.com/tpope/vim-surround
+set surround
+
+" exchange (bundle plugin)
+" usage: https://github.com/tommcdo/vim-exchange
+set exchange
+
 " nerdtree (bundle plugin)
 set NERDTree
+
+" replace with register (bundle plugin)
+" usage: https://github.com/vim-scripts/ReplaceWithRegister
+set ReplaceWithRegister
+
+" alias
+map U <C-r>
+map <C-a> ggVG"+y
