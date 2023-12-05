@@ -106,5 +106,12 @@ map gn <Action>(ShowNavBar)
 map <leader>tt <Action>(ActivateTerminalToolWindow)
 map <leader>tc <Action>(Terminal.OpenInTerminal)
 
+" bookmark
+nmap mm <Action>(ToggleBookmark)
+nmap ms <Action>(ShowBookmarks)
+
 " todo
 map <leader>to <Action>(ActivateTODOToolWindow)
+
+" nerdtree (bundle plugin)
+set NERDTree
