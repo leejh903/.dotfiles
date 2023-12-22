@@ -29,10 +29,10 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^KakaoTalk$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
-yabai -m rule --add app="^Toggl Track$" manage=off
 yabai -m rule --add app="^Clockify Desktop$" manage=off
 yabai -m rule --add app="^DeepL$" manage=off
 yabai -m rule --add app="^Todoist$" manage=off
+yabai -m rule --add app="^Logseq$" manage=off
 yabai -m rule --add app="^Rise$" manage=off
 
 # window border
