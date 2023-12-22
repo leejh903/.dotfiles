@@ -29,6 +29,10 @@ map L $
 map J }
 map K {
 
+" cursor
+nmap <S-j> :action EditorCloneCaretBelow<CR>
+nmap <S-k> :action EditorCloneCaretAbove<CR>
+
 " better escape
 inoremap jk <Esc>
 
@@ -44,10 +48,10 @@ map <leader>xx <Action>(CloseContent)
 map <leader>xa <Action>(CloseAllEditors)
 map <leader>xo <Action>(CloseAllEditorsButActive)
 map <leader>xp <Action>(CloseAllUnpinnedEditors)
+map <leader>xr <Action>(CloseAllToTheRight)
+map <leader>xl <Action>(CloseAllToTheLeft)
 
 " tab
-map <C-Tab> <Action>(PreviousTab)
-map <Tab> <Action>(NextTab)
 map <leader>p <Action>(PinActiveEditorTab)
 
 map <leader>1 <Action>(GoToTab1)
@@ -65,6 +69,7 @@ map <leader>sh <Action>(MoveTabLeft)
 map <leader>sj <Action>(MoveTabDown)
 map <leader>sk <Action>(MoveTabUp)
 map <leader>sl <Action>(MoveTabRight)
+map <leader>so <Action>(MoveEditorToOppositeTabGroup)
 map <leader>sH <Action>(SplitHorizontally)
 map <leader>sV <Action>(SplitVertically)
 
@@ -103,9 +108,9 @@ map <leader>rf <Action>(RecentFiles)
 map <leader>rl <Action>(RecentLocations)
 map <leader>rp <Action>(ManageRecentProjects)
 map <leader>sh <Action>(LocalHistory.ShowHistory)
-map <leader>sf <Action>(ShowFilePath)
+map <leader>sf <Action>(SelectInProjectView)
 map <leader>si <Action>(SelectIn)
-nmap \\fp <Action>(FindInPath)
+nmap ff <Action>(FindInPath)
 nmap \\rp <Action>(ReplaceInPath)
 
 " tag
@@ -113,8 +118,8 @@ map <leader>fu <Action>(FindUsages)
 map <leader>fs <Action>(FileStructurePopup)
 map <leader>su <Action>(ShowUsages)
 map <leader>hl <Action>(HighlightUsagesInFile)
-map <leader>qp <Action>(QuickPreview)
-map <leader>qd <Action>(QuickDefinition)
+" map <leader>qp <Action>(QuickPreview)
+map <leader>qd <Action>(QuickImplementations)
 map <leader>qD <Action>(QuickTypeDefinition)
 
 " code
@@ -143,6 +148,10 @@ map <leader>dx <Action>(Debug)
 map <leader>db <Action>(ToggleLineBreakpoint)
 map <leader>de <Action>(EditBreakpoint)
 map <leader>dv <Action>(ViewBreakpoints)
+map <leader>dr <Action>(Resume)
+map <leader>dl <Action>(StepOver)
+map <leader>dj <Action>(StepInto)
+map <leader>dk <Action>(StepOut)
 
 " build
 map <leader>bb <Action>(BuildMenu)
