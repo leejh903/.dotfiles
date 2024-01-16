@@ -40,8 +40,8 @@ inoremap jk <Esc>
 set clipboard+=unnamed
 
 " location
-map <C-i> <Action>(Back)
-map <C-o> <Action>(Forward)
+map <C-i> <Action>(Forward)
+map <C-o> <Action>(Back)
 
 " editor
 map <leader>xx <Action>(CloseContent)
