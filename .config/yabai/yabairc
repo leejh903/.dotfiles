@@ -34,6 +34,7 @@ yabai -m rule --add app="^DeepL$" manage=off
 yabai -m rule --add app="^Todoist$" manage=off
 yabai -m rule --add app="^Logseq$" manage=off
 yabai -m rule --add app="^Rise$" manage=off
+yabai -m rule --add app="^GitKraken" manage=off
 
 # window border
 
