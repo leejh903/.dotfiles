@@ -11,7 +11,6 @@ set incsearch
 set ignorecase
 set smartcase
 set gdefault
-map <leader>h :noh<CR>
 
 " ideavim settings
 set ideajoin
@@ -134,6 +133,9 @@ nmap \\g <Action>(Generate)
 nmap \\fc <Action>(ReformatCode)
 nmap \\ic <Action>(InspectCode)
 nmap \\t <Action>(GoToTest)
+
+" find
+map <leader>hn :noh<CR>
 
 " run
 map <leader>rc <Action>(ContextRun)
