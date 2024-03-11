@@ -223,6 +223,9 @@ map \\jl <Action>(EditorJoinLines)
 " gist
 map \\cg <Action>(Github.Create.Gist)
 
+" copilot
+map \\cc <Action>(ActivateGitHubCopilotChatToolWindow)
+
 " vcs
 map <leader>v <Action>(VcsGroups)
 
