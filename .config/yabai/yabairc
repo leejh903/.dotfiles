@@ -29,13 +29,12 @@ yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^KakaoTalk$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
-yabai -m rule --add app="^Clockify Desktop$" manage=off
 yabai -m rule --add app="^DeepL$" manage=off
-yabai -m rule --add app="^Todoist$" manage=off
 yabai -m rule --add app="^Logseq$" manage=off
 yabai -m rule --add app="^Rise$" manage=off
 yabai -m rule --add app="^GitKraken" manage=off
 yabai -m rule --add app="^ClickUp" manage=off
+yabai -m rule --add app="^Raycast" manage=off
 
 # window border
 
