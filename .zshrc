@@ -122,9 +122,6 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# https://direnv.net/
-which direnv > /dev/null && eval "$(direnv hook zsh)"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -160,3 +157,7 @@ export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 
 # brew
 export PATH=/opt/homebrew/bin:$PATH
+
+# https://direnv.net/
+which direnv > /dev/null && eval "$(direnv hook zsh)"
+
