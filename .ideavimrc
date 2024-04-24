@@ -49,6 +49,7 @@ map <leader>xo <Action>(CloseAllEditorsButActive)
 map <leader>xp <Action>(CloseAllUnpinnedEditors)
 map <leader>xr <Action>(CloseAllToTheRight)
 map <leader>xl <Action>(CloseAllToTheLeft)
+map <leader>xe <Action>(CloseProject)
 
 " tab
 map <leader>p <Action>(PinActiveEditorTab)
