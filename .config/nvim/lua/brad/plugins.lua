@@ -124,6 +124,7 @@ return packer.startup(function(use)
       "nvim-lua/plenary.nvim",
     },
   })
+  use("github/copilot.vim")
 
   if packer_bootstrap then
     require("packer").sync()
