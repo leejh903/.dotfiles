@@ -1,0 +1,151 @@
+{
+  "workbench.startupEditor": "none",
+
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 11,
+
+  "editor.mouseWheelZoom": true,
+  "editor.accessibilitySupport": "off",
+  "editor.defaultFormatter": "GitHub.copilot",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "dart.flutterHotReloadOnSave": "all",
+  "dart.openDevTools": "flutter",
+
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // vim configuration
+  // "editor.lineNumbers": "relative",
+  "editor.scrollBeyondLastLine": false, // recommended by neovim
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": " ",
+  "vim.insertModeKeyBindings": [
+    {
+      // Pressing j twice ("before": ["j", "j"]) simulates the Esc key ("after": ["<Esc>"]).
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      // Pressing the leader key (Spacebar) followed by d deletes the current line.
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      // Pressing ctrl+n clears search highlighting
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      // Pressing K inserts a line break above the cursor.
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by w splits the editor.
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by e toggles the sidebar visibility.
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+       // Pressing the leader key (Spacebar) followed by c comments the current line.
+      "before": ["<leader>", "c"],
+      "commands": ["editor.action.commentLine"]
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by f reveals the current file in the Explorer.
+      "before": ["<leader>", "f"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by r and then e renames the current symbol.
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by r and then f renames the current file.
+      "before": ["<leader>", "r", "f"],
+      "commands": ["fileutils.renameFile"]
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by o, g shows all symbols in the workspace.
+      "before": ["<leader>", "o", "g"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+       // Pressing the leader key (Spacebar) followed by o, o shows all open editors in the active group.
+      "before": ["<leader>", "o", "o"],
+      "commands": ["workbench.action.showEditorsInActiveGroup"]
+    },
+    {
+      // Pressing the leader key (Spacebar) followed by o, p opens the quick open panel.
+      "before": ["leader", "o", "p"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      //  Pressing m followed by a toggles numbered bookmark 1.
+      "before": ["m", "a"],
+      "commands": ["numberedBookmarks.toggleBookmark1"]
+    },
+    {
+      // Pressing ' followed by a jumps to numbered bookmark 1.
+      "key": "' a",
+      "command": "numberedBookmarks.jumpToBookmark1",
+      "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+    }
+  ],
+
+  //
+  // Custom keybindings for visual
+  // 
+
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["leader", "c"],
+      "commands": ["editor.action.commentLine", "extension.vim_escape"]
+    }
+  ],
+
+  // install multi-command plugin to be able to use it with keybindings
+    "multiCommand.commands": [
+    {
+      "command": "multiCommand.toggleMaximizedPanelAndFocusTerminal",
+      "sequence": [
+        "workbench.action.toggleMaximizedPanel",
+        "workbench.action.terminal.focus"
+      ]
+    }
+  ],
+
+  "window.commandCenter": false,
+  "window.autoDetectColorScheme": true,
+
+  "github.copilot.chat.localeOverride": "ko",
+  "workbench.colorTheme": "Default Light Modern",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
