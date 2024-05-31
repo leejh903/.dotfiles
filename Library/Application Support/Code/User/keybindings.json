@@ -190,4 +190,9 @@
     //   "key": "cmd+0",
     //   "command": "multiCommand.resetAllZooms"
     // },
+    {
+      "key": "cmd+1",
+      "command": "workbench.files.action.focusFilesExplorer",
+      "when": "editorFocus"
+    },
   ]

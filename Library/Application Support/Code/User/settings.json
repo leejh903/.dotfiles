@@ -55,6 +55,11 @@
       "commands": [":nohl"]
     },
     {
+      // Focus on search view
+      "before": ["f", "f"],
+      "commands": ["workbench.view.search.focus"]
+    },
+    {
       // Pressing K inserts a line break above the cursor.
       "before": ["K"],
       "commands": ["lineBreakInsert"],
