@@ -36,6 +36,7 @@ yabai -m rule --add app="^Raycast" manage=off
 yabai -m rule --add app="^Calendar" manage=off
 yabai -m rule --add app="^Mail" manage=off
 yabai -m rule --add app="^Todoist" manage=off
+yabai -m rule --add app="^Reminders" manage=off
 yabai -m rule --add app="^Clockify" manage=off
 
 # window border
