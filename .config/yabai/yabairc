@@ -33,6 +33,7 @@ yabai -m rule --add app="^DeepL$" manage=off
 yabai -m rule --add app="^Logseq$" manage=off
 yabai -m rule --add app="^GitKraken" manage=off
 yabai -m rule --add app="^Raycast" manage=off
+yabai -m rule --add app="^ChatGPT" manage=off
 yabai -m rule --add app="^Calendar" manage=off
 yabai -m rule --add app="^Mail" manage=off
 yabai -m rule --add app="^Todoist" manage=off
