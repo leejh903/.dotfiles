@@ -158,6 +158,7 @@ map <leader>dk <Action>(StepOut)
 
 " build
 map <leader>bb <Action>(BuildMenu)
+map <leader>bp <Action>(ExternalSystem.RefreshAllProjects)
 
 " refactor
 map <leader>rn <Action>(RenameElement)
