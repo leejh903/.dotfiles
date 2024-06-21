@@ -31,12 +31,14 @@ yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^DeepL$" manage=off
 yabai -m rule --add app="^Logseq$" manage=off
+yabai -m rule --add app="^Notion$" manage=off
 yabai -m rule --add app="^GitKraken" manage=off
 yabai -m rule --add app="^Raycast" manage=off
 yabai -m rule --add app="^ChatGPT" manage=off
 yabai -m rule --add app="^Calendar" manage=off
 yabai -m rule --add app="^Mail" manage=off
 yabai -m rule --add app="^Todoist" manage=off
+yabai -m rule --add app="^JIRA" manage=off
 yabai -m rule --add app="^Reminders" manage=off
 yabai -m rule --add app="^Clockify" manage=off
 
