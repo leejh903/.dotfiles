@@ -30,7 +30,7 @@ yabai -m rule --add app="^KakaoTalk$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Simulator$" manage=off
 yabai -m rule --add app="^DeepL$" manage=off
-yabai -m rule --add app="^Logseq$" manage=off
+yabai -m rule --add app="^Obsidian$" manage=off
 yabai -m rule --add app="^Notion$" manage=off
 yabai -m rule --add app="^GitKraken" manage=off
 yabai -m rule --add app="^Raycast" manage=off
