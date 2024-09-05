@@ -41,6 +41,7 @@ yabai -m rule --add app="^Todoist" manage=off
 yabai -m rule --add app="^JIRA" manage=off
 yabai -m rule --add app="^Reminders" manage=off
 yabai -m rule --add app="^Clockify" manage=off
+yabai -m rule --add app="^IntelliJ IDEA$" subrole="AXStandardWindow" manage=off
 
 # window border
 
