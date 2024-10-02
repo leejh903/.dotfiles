@@ -213,6 +213,25 @@ map <leader>tc <Action>(Terminal.OpenInTerminal)
 nmap mm <Action>(ToggleBookmark)
 nmap ms <Action>(ShowBookmarks)
 
+" Git commands
+map <leader>gs <Action>(Vcs.QuickListPopupAction)
+map <leader>gc <Action>(CheckinProject)
+map <leader>gP <Action>(Vcs.Push)
+map <leader>gp <Action>(Git.Pull)
+map <leader>gpr <Action>(Github.Create.Pull.Request)
+map <leader>gl <Action>(Vcs.UpdateProject)
+map <leader>gb <Action>(Git.ShowBranches)
+map <leader>gB <Action>(Git.CreateNewBranch)
+map <leader>gch <Action>(GitCheckoutFromInputAction)
+map <leader>gr <Action>(Git.Reset)
+map <leader>gR <Action>(Git.Rebase)
+map <leader>gm <Action>(Git.Merge)
+map <leader>gsh <Action>(Git.Stash)
+map <leader>gsp <Action>(Git.Unstash)
+map <leader>grv <Action>(Git.Revert)
+map <leader>gt <Action>(Git.Tag)
+map <leader>gf <Action>(Git.Fetch)
+
 " todo
 map <leader>to <Action>(ActivateTODOToolWindow)
 
