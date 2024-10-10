@@ -237,6 +237,7 @@ map <leader>to <Action>(ActivateTODOToolWindow)
 
 " task
 map <leader>ts <Action>(tasks.goto)
+map <leader>tx <Action>(tasks.close)
 
 " idea join
 map \\jl <Action>(EditorJoinLines)
