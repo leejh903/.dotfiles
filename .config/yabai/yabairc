@@ -33,18 +33,12 @@ yabai -m rule --add app="^DeepL$" manage=off
 yabai -m rule --add app="^Obsidian$" manage=off
 yabai -m rule --add app="^Notion$" manage=off
 yabai -m rule --add app="^Raycast" manage=off
-yabai -m rule --add app="^ChatGPT" manage=off
+# yabai -m rule --add app="^ChatGPT" manage=off
 yabai -m rule --add app="^Calendar" manage=off
 yabai -m rule --add app="^Mail" manage=off
 yabai -m rule --add app="^Todoist" manage=off
 yabai -m rule --add app="^Toggl Track" manage=off
 
-# window border
-
-yabai -m config window_border on | off
-yabai -m config window_border_width 6
-yabai -m config active_window_border_color 0xff4287f5
-yabai -m config normal_window_border_color 0xff555555
-
-yabai -m window --toggle border
-yabai -m rule --add app=Terminal border=off
+# brew tap FelixKratz/formulae
+# brew install borders
+borders active_color=0xff5ba8ff inactive_color=0xff494d64 width=10.0 &
