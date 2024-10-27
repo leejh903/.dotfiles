@@ -161,3 +161,4 @@ export PATH=/opt/homebrew/bin:$PATH
 # https://direnv.net/
 which direnv > /dev/null && eval "$(direnv hook zsh)"
 
+eval "$(gh copilot alias -- zsh)"
