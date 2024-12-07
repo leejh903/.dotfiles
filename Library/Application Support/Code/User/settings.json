@@ -33,9 +33,41 @@
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
-  "vim.leader": " ",
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<space>": true
+  },
+  "vim.useCtrlKeys": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "o", "f"],
+      "commands": ["workbench.action.files.openFile"]
+    },
+    {
+      "before": ["<leader>", "x", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "x", "a"],
+      "commands": ["workbench.action.closeAllEditors"]
+    },
+    {
+      "before": ["<leader>", "x", "o"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["\\", "c", "c"],
+      "commands": [
+        "workbench.panel.chat.view.copilot.focus",
+      ]
+    }
+    // 추가 커맨드들...
+  ],
   "vim.insertModeKeyBindings": [
     {
       // Pressing j twice ("before": ["j", "j"]) simulates the Esc key ("after": ["<Esc>"]).
@@ -120,7 +152,7 @@
       "key": "' a",
       "command": "numberedBookmarks.jumpToBookmark1",
       "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
-    }
+    },
   ],
 
   //
@@ -152,5 +184,8 @@
   "workbench.colorTheme": "Default Light Modern",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "yaml.schemas": {
+    "file:///Users/brad/.vscode/extensions/atlassian.atlascode-3.0.14/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
   }
 }
