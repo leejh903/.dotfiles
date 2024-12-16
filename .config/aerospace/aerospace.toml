@@ -167,6 +167,18 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+# move window to specific workspace
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
 run = "move-node-to-workspace T"
+
+# run layout floating
+[[on-window-detected]]
+if.app-id = 'com.todoist.mac.Todoist'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = 'layout floating'
