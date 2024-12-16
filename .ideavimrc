@@ -236,7 +236,8 @@ map <leader>gf <Action>(Git.Fetch)
 map <leader>to <Action>(ActivateTODOToolWindow)
 
 " task
-map <leader>ts <Action>(tasks.goto)
+map <leader>tg <Action>(tasks.goto)
+map <leader>ts <Action>(tasks.switch)
 map <leader>tx <Action>(tasks.close)
 
 " idea join
