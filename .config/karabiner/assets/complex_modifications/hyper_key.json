@@ -1,0 +1,33 @@
+{
+  "title": "Long press Spacebar to Command+Control+Option+Shift",
+  "rules": [
+    {
+      "description": "Long press Space to Command+Control+Option+Shift",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to_if_held_down": [
+            {
+              "key_code": "left_command",
+              "modifiers": ["left_control", "left_option", "left_shift"]
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "key_code": "spacebar"
+            }
+          ],
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 50
+          }
+        }
+      ]
+    }
+  ]
+}
