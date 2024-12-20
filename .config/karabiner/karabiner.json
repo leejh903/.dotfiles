@@ -5,26 +5,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Long press Space to Command+Control+Option+Shift",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 50 },
-                                "to_after_key_up": [{ "key_code": "spacebar" }],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "left_command",
-                                        "modifiers": ["left_control", "left_option", "left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "shift + 스페이스 를 사용하여 입력 소스 변경",
                         "manipulators": [
                             {
