@@ -65,7 +65,7 @@
                                     "key_code": "spacebar",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 50 },
+                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
                                 "to_after_key_up": [{ "key_code": "spacebar" }],
                                 "to_if_held_down": [
                                     {
