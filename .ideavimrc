@@ -72,6 +72,7 @@ map <leader>sl <Action>(MoveTabRight)
 map <leader>so <Action>(MoveEditorToOppositeTabGroup)
 map <leader>sH <Action>(SplitHorizontally)
 map <leader>sV <Action>(SplitVertically)
+map <M-t> <Action>(ReopenClosedTab)
 
 map <C-p> <Action>(JumpToLastWindow)
 map <M-i> <Action>(PrevSplitter)
