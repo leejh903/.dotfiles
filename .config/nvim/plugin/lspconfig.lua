@@ -1,18 +1,6 @@
--- import lspconfig plugin safely
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then
-  return
-end
-
 -- import cmp-nvim-lsp plugin safely
 local cmp_nvim_lsp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_nvim_lsp_status then
-  return
-end
-
--- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
   return
 end
 
@@ -38,11 +26,20 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
 
-  -- typescript specific keymaps (e.g. rename file and update imports)
-  if client.name == "tsserver" then
-    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-    keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-    keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+  -- typescript specific keymaps (ts_ls)
+  if client.name == "ts_ls" then
+    keymap.set("n", "<leader>oi", function()
+      vim.lsp.buf.execute_command({
+        command = "_typescript.organizeImports",
+        arguments = { vim.api.nvim_buf_get_name(0) },
+      })
+    end, opts) -- organize imports
+    keymap.set("n", "<leader>ru", function()
+      vim.lsp.buf.execute_command({
+        command = "_typescript.removeUnused",
+        arguments = { vim.api.nvim_buf_get_name(0) },
+      })
+    end, opts) -- remove unused variables
   end
 end
 
@@ -51,21 +48,21 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
-local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
+local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
-typescript.setup({
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  },
+-- Global config applied to all servers
+vim.lsp.config("*", {
+  capabilities = capabilities,
+  on_attach = on_attach,
 })
 
 -- setup default servers
-local defaultSever = {
+local defaultServers = {
+  "ts_ls",
   "lua_ls",
   "html",
   "cssls",
@@ -77,16 +74,11 @@ local defaultSever = {
   "rust_analyzer",
   "dartls",
 }
-for _, name in ipairs(defaultSever) do
-  local default = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  }
 
+for _, name in ipairs(defaultServers) do
   local has_custom_provider, custom_config = pcall(require, "plugin/providers/" .. name)
   if has_custom_provider then
-    default = vim.tbl_deep_extend("force", default, custom_config)
+    vim.lsp.config(name, custom_config)
   end
-
-  lspconfig[name].setup(default)
+  vim.lsp.enable(name)
 end
