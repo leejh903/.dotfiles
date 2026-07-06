@@ -102,9 +102,6 @@ dotgit config --local status.showUntrackedFiles no
    security add-generic-password -a "$USER" -s GITHUB_PERSONAL_ACCESS_TOKEN -w <token>
    ```
    On non-macOS machines this line will just no-op (empty token).
-5. `.zshrc` sources completions for `openclaw`, a personal CLI tool that
-   isn't part of this public setup. The line is guarded with a file-exists
-   check, so it's a no-op if you don't have `openclaw` installed.
 
 ## Day-to-day usage
 

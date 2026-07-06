@@ -118,6 +118,4 @@ alias dotlazy='lazygit --git-dir=$HOME/.myconf --work-tree=$HOME'
 
 export GITHUB_PERSONAL_ACCESS_TOKEN=$(security find-generic-password -a "$USER" -s GITHUB_PERSONAL_ACCESS_TOKEN -w 2>/dev/null)
 
-# OpenClaw Completion (personal CLI tool, not part of this dotfiles setup)
-[[ -f "$HOME/.openclaw/completions/openclaw.zsh" ]] && source "$HOME/.openclaw/completions/openclaw.zsh"
 export PATH="$HOME/.local/bin:$PATH"
