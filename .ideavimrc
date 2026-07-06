@@ -211,6 +211,7 @@ map gn <Action>(ShowNavBar)
 " terminal
 map <leader>tt <Action>(ActivateTerminalToolWindow)
 map <leader>tc <Action>(Terminal.OpenInTerminal)
+map <leader>cc <Action>(com.anthropic.code.plugin.actions.OpenClaudeInTerminalAction)
 
 " bookmark
 nmap mm <Action>(ToggleBookmark)

@@ -1,6 +1,1 @@
-local setup, comment = pcall(require, "Comment")
-if not setup then
-  return
-end
-
-comment.setup()
+-- Removed: Comment.nvim replaced by Neovim 0.10+ built-in gc/gb commenting

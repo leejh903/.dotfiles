@@ -110,8 +110,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#
 alias dotgit='/usr/bin/git --git-dir=$HOME/.myconf --work-tree=$HOME'
 alias dotlazy='lazygit --git-dir=$HOME/.myconf --work-tree=$HOME'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export GITHUB_PERSONAL_ACCESS_TOKEN=$(security find-generic-password -a "$USER" -s GITHUB_PERSONAL_ACCESS_TOKEN -w 2>/dev/null)
+
+# OpenClaw Completion
+source "$HOME/.openclaw/completions/openclaw.zsh"
+export PATH="$HOME/.local/bin:$PATH"

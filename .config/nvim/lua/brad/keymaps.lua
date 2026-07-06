@@ -1,7 +1,5 @@
--- set leader key to space
-vim.g.mapleader = " "
-
-local keymap = vim.keymap -- for conciseness
+-- leader key is set in init.lua before lazy loads
+local keymap = vim.keymap
 
 ---------------------
 -- General Keymaps
@@ -17,22 +15,24 @@ keymap.set("n", "<leader>h", ":nohl<cr>")
 keymap.set("n", "x", '"_x')
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>") -- increment
-keymap.set("n", "<leader>-", "<C-x>") -- decrement
+keymap.set("n", "<leader>+", "<C-a>")
+keymap.set("n", "<leader>-", "<C-x>")
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-keymap.set("n", "<leader>sx", ":close<cr>") -- close current split window
+keymap.set("n", "<leader>sv", "<C-w>v")
+keymap.set("n", "<leader>sh", "<C-w>s")
+keymap.set("n", "<leader>se", "<C-w>=")
+keymap.set("n", "<leader>sx", ":close<cr>")
 
-keymap.set("n", "<leader>to", ":tabnew<cr>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<cr>") -- close current tab
-keymap.set("n", "<S-l>", ":tabn<cr>") --  go to next tab
-keymap.set("n", "<S-h>", ":tabp<cr>") --  go to previous tab
+-- tab management
+keymap.set("n", "<leader>to", ":tabnew<cr>")
+keymap.set("n", "<leader>tx", ":tabclose<cr>")
+keymap.set("n", "<S-l>", ":tabn<cr>")
+keymap.set("n", "<S-h>", ":tabp<cr>")
 
 -- save, kill
 keymap.set("n", "<leader>w", ":w<cr>")
+keymap.set("n", "<leader>q", ":q<cr>")
 keymap.set("n", "<leader>x", ":xa<cr>")
 keymap.set("n", "<leader>bd", ":bd<cr>")
 
@@ -41,17 +41,34 @@ keymap.set("n", "<leader>bd", ":bd<cr>")
 ----------------------
 
 -- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<cr>") -- toggle split window maximization
+keymap.set("n", "<leader>sm", ":MaximizerToggle<cr>")
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>") -- toggle file explorer
+keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
 
 -- telescope
-keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>ft", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
-keymap.set("n", "<leader>bf", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-keymap.set("n", "<leader>sh", "<cmd>Telescope help_tags<cr>") -- list available help tags
-keymap.set("n", "<leader>tf", "<cmd>TodoTelescope<cr>") -- find todo comments
-keymap.set("n", "<leader>mf", "<cmd>Telescope bookmarks list<cr>") -- find bookmarks
--- git
-keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
+keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
+keymap.set("n", "<leader>ft", "<cmd>Telescope live_grep<cr>")
+keymap.set("n", "<leader>bf", "<cmd>Telescope buffers<cr>")
+keymap.set("n", "<leader>sh", "<cmd>Telescope help_tags<cr>")
+keymap.set("n", "<leader>tf", "<cmd>TodoTelescope<cr>")
+
+-- harpoon keymaps are set in the harpoon plugin spec (lua/brad/plugins.lua)
+-- <leader>a  → add file
+-- <leader>mf → toggle menu
+-- <C-1/2/3/4> → jump to file 1-4
+
+-- terminal
+keymap.set("n", "<leader>tt", function()
+  vim.cmd("botright split")
+  vim.cmd("resize 15")
+  vim.cmd("terminal")
+  vim.cmd("startinsert")
+end, { desc = "Open terminal at bottom" })
+
+-- vim-tmux-navigator: terminal mode support
+-- Without these, <C-h/j/k/l> go to the shell process instead of vim-tmux-navigator
+keymap.set("t", "<C-h>", "<C-\\><C-N>:TmuxNavigateLeft<CR>")
+keymap.set("t", "<C-j>", "<C-\\><C-N>:TmuxNavigateDown<CR>")
+keymap.set("t", "<C-k>", "<C-\\><C-N>:TmuxNavigateUp<CR>")
+keymap.set("t", "<C-l>", "<C-\\><C-N>:TmuxNavigateRight<CR>")
