@@ -40,11 +40,39 @@ aren't meant to sync.
 
 ## Setup on a new machine
 
-Prerequisites this config assumes are already installed: `zsh` +
-[oh-my-zsh](https://ohmyz.sh/), [Homebrew](https://brew.sh),
-[tmux](https://github.com/tmux/tmux) + [tpm](https://github.com/tmux-plugins/tpm),
-[lazygit](https://github.com/jesseduffield/lazygit), Neovim,
-[powerlevel10k](https://github.com/romkatv/powerlevel10k).
+### 1. Install prerequisites
+
+```sh
+# Homebrew (if not already installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# powerlevel10k theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+Once Homebrew and the repo above (which includes `Brewfile`) are in place:
+
+```sh
+brew bundle --file=Brewfile
+```
+
+`Brewfile` installs: git, tmux, lazygit, neovim, node, ripgrep, fd (all used
+by the nvim/tmux config), `dark-notify` (switches the tmux Catppuccin theme
+with macOS light/dark mode), and the Meslo Nerd Font p10k needs for its
+prompt glyphs.
+
+Karabiner-Elements is a separate `.app` (not a brew formula) — install it
+manually from https://karabiner-elements.pqrs.org if you want the tracked
+`.config/karabiner/` mappings to apply.
+
+### 2. Clone and check out the dotfiles
 
 ```sh
 git clone --bare git@github.com:leejh903/.dotfiles.git $HOME/.myconf
@@ -59,18 +87,24 @@ dotgit checkout
 dotgit config --local status.showUntrackedFiles no
 ```
 
-After checkout:
-1. Add the `dotgit`/`dotlazy` aliases to `.zshrc` if not already present
-   (they're tracked, so a fresh checkout brings them in automatically).
+### 3. Finish setup
+
+1. Restart the shell so `.zshrc` (with the `dotgit`/`dotlazy` aliases,
+   already brought in by the checkout) is picked up.
 2. Install tmux plugins: open tmux, press `prefix + I` (capital i) to fetch
    plugins via tpm.
-3. `GITHUB_PERSONAL_ACCESS_TOKEN` in `.zshrc` is read from the macOS Keychain
+3. Open nvim once — `lazy.nvim` bootstraps itself and installs plugins from
+   `lua/brad/plugins.lua` on first launch; `:Mason` installs LSP servers.
+4. `GITHUB_PERSONAL_ACCESS_TOKEN` in `.zshrc` is read from the macOS Keychain
    at shell startup (`security find-generic-password ...`) — it is **not**
    stored in this repo. On a new Mac, add the token to Keychain first:
    ```sh
    security add-generic-password -a "$USER" -s GITHUB_PERSONAL_ACCESS_TOKEN -w <token>
    ```
    On non-macOS machines this line will just no-op (empty token).
+5. `.zshrc` sources completions for `openclaw`, a personal CLI tool that
+   isn't part of this public setup. The line is guarded with a file-exists
+   check, so it's a no-op if you don't have `openclaw` installed.
 
 ## Day-to-day usage
 
