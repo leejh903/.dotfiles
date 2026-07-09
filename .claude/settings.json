@@ -2,7 +2,7 @@
   "model": "sonnet",
   "statusLine": {
     "type": "command",
-    "command": "bash /Users/brad/.claude/statusline-command.sh"
+    "command": "bash $HOME/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "ralph-loop@claude-plugins-official": true,
