@@ -9,5 +9,7 @@ brew "node"          # needed by several nvim LSP servers / plugins
 brew "ripgrep"       # telescope.nvim live_grep
 brew "fd"            # telescope.nvim find_files (falls back to rg/git if missing)
 brew "cormacrelf/tap/dark-notify" # switches tmux Catppuccin theme with macOS appearance
+brew "daipeihust/tap/im-select"   # im-select.nvim: switches macOS input source on insert leave
 
 cask "font-meslo-for-powerlevel10k" # required glyphs for the p10k prompt
+cask "font-d2coding"                # ghostty font-family
