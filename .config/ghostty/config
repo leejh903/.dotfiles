@@ -1,0 +1,6 @@
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+font-family = D2Coding
+font-size = 16
+command = /opt/homebrew/bin/tmux
+background-opacity = 0.95
+background-blur-radius = 20
