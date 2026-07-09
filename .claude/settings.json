@@ -1,0 +1,25 @@
+{
+  "model": "sonnet",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/brad/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "ralph-loop@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "headroom-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "chopratejas/headroom"
+      }
+    }
+  },
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "auto",
+  "editorMode": "vim",
+  "preferredNotifChannel": "terminal_bell",
+  "voiceEnabled": true
+}
