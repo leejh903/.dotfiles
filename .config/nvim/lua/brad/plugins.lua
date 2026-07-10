@@ -404,30 +404,36 @@ require("lazy").setup({
   -- [[ Treesitter ]]
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.configs").setup({
-        highlight = { enable = true },
-        indent = { enable = true },
-        autotag = { enable = true },
-        ensure_installed = {
-          "json",
-          "javascript",
-          "typescript",
-          "tsx",
-          "yaml",
-          "html",
-          "css",
-          "markdown",
-          "bash",
-          "lua",
-          "vim",
-          "gitignore",
-          "tmux",
-          "ssh_config",
-        },
-        auto_install = true,
+      local filetypes = {
+        "json",
+        "javascript",
+        "typescript",
+        "tsx",
+        "yaml",
+        "html",
+        "css",
+        "markdown",
+        "bash",
+        "lua",
+        "vim",
+        "gitignore",
+        "tmux",
+        "ssh_config",
+      }
+
+      require("nvim-treesitter").setup()
+      require("nvim-treesitter").install(vim.list_extend(vim.deepcopy(filetypes), { "markdown_inline" }))
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = filetypes,
+        callback = function()
+          vim.treesitter.start()
+          vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
       })
     end,
   },
@@ -436,6 +442,9 @@ require("lazy").setup({
   {
     "windwp/nvim-ts-autotag",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
 
   -- [[ Auto Pairs ]]
@@ -517,9 +526,6 @@ require("lazy").setup({
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     ft = "markdown",
-    init = function()
-      require("nvim-treesitter.query_predicates")
-    end,
     opts = {
       heading = {
         icons = { "# ", "## ", "### ", "#### ", "##### ", "###### " },
@@ -585,8 +591,8 @@ require("lazy").setup({
     opts = {
       workspaces = {
         {
-          name = "tech",
-          path = "~/Documents/tech",
+          name = "docs",
+          path = "~/workspace/docs",
         },
       },
       new_notes_location = "current_dir",
