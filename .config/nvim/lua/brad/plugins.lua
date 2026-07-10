@@ -106,7 +106,7 @@ require("lazy").setup({
   -- [[ Telescope ]]
   {
     "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
+    branch = "master",
     dependencies = {
       "nvim-lua/plenary.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -304,7 +304,19 @@ require("lazy").setup({
 
       vim.lsp.config("*", {
         capabilities = capabilities,
-        on_attach = on_attach,
+      })
+
+      -- `on_attach` in vim.lsp.config() isn't invoked by vim.lsp.enable()'s
+      -- client startup path in this Neovim version, so wire buffer-local
+      -- keymaps via the LspAttach autocmd instead (the documented,
+      -- version-stable mechanism).
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if client then
+            on_attach(client, args.buf)
+          end
+        end,
       })
 
       -- lua_ls: inline config so vim globals are recognized
@@ -320,6 +332,17 @@ require("lazy").setup({
               maxPreload = 5000,
               preloadFileSize = 10000,
             },
+          },
+        },
+      })
+
+      -- ts_ls: mason bundles typescript-language-server with typescript ^7.0.2
+      -- (the native/Go rewrite), which the language server can't use as its
+      -- tsserver backend. Point it at a classic-API typescript install instead.
+      vim.lsp.config("ts_ls", {
+        init_options = {
+          tsserver = {
+            path = vim.fn.system("npm root -g"):gsub("%s+$", "") .. "/typescript/lib/tsserverlibrary.js",
           },
         },
       })
@@ -349,6 +372,7 @@ require("lazy").setup({
         definition = { keys = { edit = "<CR>" } },
         rename = { in_select = false },
         ui = { colors = { normal_bg = "#022746" } },
+        lightbulb = { enable = false },
       })
     end,
   },
