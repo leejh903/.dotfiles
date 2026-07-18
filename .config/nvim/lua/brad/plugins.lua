@@ -548,6 +548,17 @@ require("lazy").setup({
       { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview: current file history" },
       { "<leader>gc", "<cmd>DiffviewClose<cr>", desc = "Diffview: close" },
     },
+    config = function()
+      local actions = require("diffview.actions")
+      -- "e"로 diff 커서 위치의 실제 파일을 열어 바로 편집
+      require("diffview").setup({
+        keymaps = {
+          view = { ["e"] = actions.goto_file_edit },
+          file_panel = { ["e"] = actions.goto_file_edit },
+          file_history_panel = { ["e"] = actions.goto_file_edit },
+        },
+      })
+    end,
   },
 
   -- [[ Markdown rendering ]]
@@ -607,6 +618,22 @@ require("lazy").setup({
       { "<leader>as", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Claude: send selection" },
       { "<leader>aa", "<cmd>ClaudeCodeDiffAccept<cr>", desc = "Claude: accept diff" },
       { "<leader>ad", "<cmd>ClaudeCodeDiffDeny<cr>", desc = "Claude: reject diff" },
+    },
+  },
+
+  -- [[ Codex ]]
+  -- claudecode.nvim 아키텍처를 그대로 이식: lockfile + WebSocket MCP, diff accept/reject, @멘션
+  {
+    "ishiooon/codex.nvim",
+    dependencies = { "folke/snacks.nvim" },
+    config = true,
+    cmd = { "Codex", "CodexFocus", "CodexMaximizeToggle", "CodexSend", "CodexTreeAdd" },
+    keys = {
+      { "<leader>cc", "<cmd>Codex<cr>", desc = "Codex: toggle" },
+      { "<leader>cf", "<cmd>CodexFocus<cr>", desc = "Codex: focus" },
+      { "<leader>cm", "<cmd>CodexMaximizeToggle<cr>", desc = "Codex: toggle modal" },
+      { "<leader>cs", "<cmd>CodexSend<cr>", mode = "v", desc = "Codex: send selection" },
+      { "<leader>cs", "<cmd>CodexTreeAdd<cr>", desc = "Codex: add file", ft = { "neo-tree", "oil" } },
     },
   },
 
