@@ -1,8 +1,6 @@
-# graphify
-- **graphify** (`~/.claude/skills/graphify/SKILL.md`) - any input to knowledge graph. Trigger: `/graphify`
-When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` before doing anything else.
+# 사용자 전역 작업 지침
 
-# 1Password CLI
+## 1Password CLI
 
 - 같은 item에 `password`와 `console password`처럼 label이 겹칠 수 있으므로
   `op item get ... --fields password` 같은 모호한 label 선택을 사용하지 않는다.
