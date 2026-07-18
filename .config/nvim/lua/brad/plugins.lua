@@ -540,9 +540,14 @@ require("lazy").setup({
   },
 
   {
-    "kdheepak/lazygit.nvim",
+    "sindrets/diffview.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    keys = { { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" } },
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory" },
+    keys = {
+      { "<leader>gg", "<cmd>DiffviewOpen<cr>", desc = "Diffview: open" },
+      { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview: current file history" },
+      { "<leader>gc", "<cmd>DiffviewClose<cr>", desc = "Diffview: close" },
+    },
   },
 
   -- [[ Markdown rendering ]]
