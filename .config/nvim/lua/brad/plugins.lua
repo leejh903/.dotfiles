@@ -99,7 +99,7 @@ require("lazy").setup({
   {
     "nvim-lualine/lualine.nvim",
     config = function()
-      require("lualine").setup({ options = { theme = "catppuccin" } })
+      require("lualine").setup({ options = { theme = "catppuccin-nvim" } })
     end,
   },
 
